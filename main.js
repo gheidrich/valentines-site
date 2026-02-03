@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const yesButton = document.querySelector(".choice-box button:first-child");
     const noButton = document.querySelector(".choice-box button:last-child");
 
-    let partnerName = "mj <3"; // Replace with dynamic value
+    let partnerName = "mj ♡"; // Replace with dynamic value
     let noClickCount = 0; // Counter for No button clicks
 
     // Function to create typewriter effect
@@ -86,9 +86,9 @@ document.addEventListener("DOMContentLoaded", function () {
     noButton.addEventListener("click", function () {
         noClickCount++; // Increment No click count
 
-        if (noClickCount < 5) {
+        if (noClickCount < 8) {
             let newNoSize = 16 - noClickCount * 2; // Reduce No button size
-            let newYesSize = 18 + noClickCount * 5; // Increase Yes button size
+            let newYesSize = 18 + noClickCount * 10; // Increase Yes button size
 
             noButton.style.fontSize = `${newNoSize}px`;
             noButton.style.padding = `${newNoSize / 2}px ${newNoSize}px`;
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             yesButton.style.padding = `${newYesSize / 2}px ${newYesSize}px`;
         } else {
             noButton.style.display = "none"; // Hide No button after 5 clicks
-            questionText.innerHTML += `<br><span class="no-choice-text">Did you really think you had a choice? 🤭</span>`;
+            questionText.innerHTML += `<br><span class="no-choice-text">Did you really think you had a choice hehe 🤭</span>`;
         }
     });
 
