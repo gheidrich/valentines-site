@@ -101,34 +101,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Make "No" button dodge the mouse 😈
-const choiceBox = noButton.parentElement;
+// Make "No" button dodge the mouse 😈
+if (noButton && choiceBox) {
+  choiceBox.addEventListener("mousemove", (e) => {
+    // If hidden, do nothing
+    if (noButton.style.display === "none") return;
 
-choiceBox.addEventListener("mousemove", (e) => {
-  const boxRect = choiceBox.getBoundingClientRect();
-  const buttonRect = noButton.getBoundingClientRect();
+    const boxRect = choiceBox.getBoundingClientRect();
+    const buttonRect = noButton.getBoundingClientRect();
 
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
 
-  const buttonCenterX = buttonRect.left + buttonRect.width / 2;
-  const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+    const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+    const buttonCenterY = buttonRect.top + buttonRect.height / 2;
 
-  const distance = Math.hypot(
-    mouseX - buttonCenterX,
-    mouseY - buttonCenterY
-  );
+    const distance = Math.hypot(mouseX - buttonCenterX, mouseY - buttonCenterY);
 
-  if (distance < 80) {
-    const maxX = boxRect.width - buttonRect.width;
-    const maxY = boxRect.height - buttonRect.height;
+    if (distance < 80) {
+      const maxX = Math.max(0, boxRect.width - buttonRect.width);
+      const maxY = Math.max(0, boxRect.height - buttonRect.height);
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
 
-    noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
-  }
-});      
+      noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+  });
+}
 
     clickButton.addEventListener("click", revealChoices);
 });
