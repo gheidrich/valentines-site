@@ -241,6 +241,20 @@ h3 {
     transition: transform 0.15s ease;
 }
 
+/* Give the button area some room so "No" can move around */
+.choice-box {
+  min-height: 120px;      /* vertical space to dodge */
+  min-width: 280px;       /* horizontal space to dodge */
+  overflow: visible;      /* don't clip the button when it moves */
+}
+
+/* Make only the NO button movable */
+#no-button {
+  position: absolute;
+  right: 22px;            /* starting position */
+  top: 22px;              /* starting position */
+  transition: transform 0.15s ease;
+}
 
 .valentine-gif {
   margin-top: 18px;
