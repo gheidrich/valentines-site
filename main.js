@@ -101,5 +101,34 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Make "No" button dodge the mouse 😈
+const choiceBox = noButton.parentElement;
+
+choiceBox.addEventListener("mousemove", (e) => {
+  const boxRect = choiceBox.getBoundingClientRect();
+  const buttonRect = noButton.getBoundingClientRect();
+
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+  const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+
+  const distance = Math.hypot(
+    mouseX - buttonCenterX,
+    mouseY - buttonCenterY
+  );
+
+  if (distance < 80) {
+    const maxX = boxRect.width - buttonRect.width;
+    const maxY = boxRect.height - buttonRect.height;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+  }
+});      
+
     clickButton.addEventListener("click", revealChoices);
 });
