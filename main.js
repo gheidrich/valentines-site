@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const threedBox = document.querySelector(".threed-box");
     const questionText = document.querySelector(".question-box h1");
     const yesButton = document.querySelector(".choice-box button:first-child");
-    const noButton = document.querySelector(".choice-box button:last-child");
+    const noButton = document.getElementById("no-button");
+
 
     let partnerName = "mj ♡"; // Replace with dynamic value
     let noClickCount = 0; // Counter for No button clicks
