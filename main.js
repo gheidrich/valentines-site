@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     noButton.addEventListener("click", function () {
         noClickCount++; // Increment No click count
 
-        if (noClickCount < 8) {
+        if (noClickCount < 5) {
             let newNoSize = 16 - noClickCount * 2; // Reduce No button size
             let newYesSize = 18 + noClickCount * 10; // Increase Yes button size
 
