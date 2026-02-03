@@ -235,6 +235,14 @@ h3 {
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
+.valentine-gif {
+  margin-top: 18px;
+  max-width: 220px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .question-box:hover,
 .choice-box:hover {
     transform: scale(1.05);
